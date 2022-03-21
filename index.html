@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+   <title>form</title>
+<style>
+body{
+background:black;
+}
+input{
+border-radius:5px;
+border:2px solid lime; 
+padding:5px 20px 5px 20px; 
+margin:10px 0px 0px 0px; 
+box-shadow:0px 0px 8px lime,inset 0px 0px 8px lime; 
+background:black;
+color:lime
+}
+form{
+text-align:center;
+}
+#s{
+color:lime;
+font-size:20px;
+}
+</style>
+</head>
+<body>
+<form method="post" action="V.php" enctype="multipart/form_data" onsubmit="return check()"  >
+<input id="a" type="text" name="Fname" placeholder="firstname"/><br/>
+<input id="b" type="text" name="Lname" placeholder="Lastname"/><br/><span id="s">male:</span>
+<input id="o" type="Radio" name="sex" value="male" checked="checked"/><span id="s">female:</span>
+<input id="x" type="Radio" name="sex" value="female" /><br/>
+<input id="c" type="password" name="Pword" placeholder="*******" maxlength="8"/><br/>
+<input id="d" type="submit" value="LOG-IN"   />
+
+</form>
+<script>
+
+function check(){
+var a=document.getElementById("a").value;
+var b=document.getElementById("b").value;
+var c=document.getElementById("c").value;
+var x=document.getElementById("x").value;
+var o=document.getElementById("o").value;
+if(a ==""){
+alert("Fill Firstname properly");
+return false; 
+}
+else if(b ==""){
+alert("Fill lastname  properly");
+return false;
+}
+else if(c.length < 8){
+alert("Fill password  properly,it must be 8 character");
+return false;
+}
+
+else{
+return true; 
+}
+}
+
+</script>
+</body>
+</html>
